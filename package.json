@@ -5,13 +5,13 @@
   "keywords": [ "node", "csv", "parser" ],
   "author": "Ron Wertlen <ooskapenaar@gmail.com>",
   "licenses": [
-    { "type": "MIT", "url": "https://raw.github.com/ooskapenaar/dc-ya-csv/master/LICENSE" }
+    { "type": "MIT", "url": "https://raw.github.com/ooskapenaar/ya-csv/master/LICENSE" }
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/ooskapenaar/dc-ya-csv"
+    "url": "http://github.com/ooskapenaar/ya-csv"
   },
-  "bugs": { "url": "http://github.com/koles/dc-ya-csv/issues" },
+  "bugs": { "url": "http://github.com/ooskapenaar/ya-csv/issues" },
   "directories": { "lib": "./lib", "test": "./test" },
   "bin" : { "csv-reshuffle" : "./bin/reshuffle.js" },
   "dependencies": {},
