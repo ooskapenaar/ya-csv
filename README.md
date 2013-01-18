@@ -2,6 +2,8 @@
 
 Event based CSV parser and writer for Node.js suitable for processing large CSV streams.
 
+This version extends koles version to include the iconv character encoding converter. More below.
+
     // A simple echo program:
     var csv = require('ya-csv');
 
@@ -16,7 +18,7 @@ Event based CSV parser and writer for Node.js suitable for processing large CSV 
 
     npm install ya-csv
 
-Current version requires at least Node.js v0.2.3 and it's tested with Node.js v0.4.12, 0.6.11 and 0.7.5. Hope it works with the other versions in between too.
+Current version requires at least Node.js v0.2.3 and it's tested with Node.js v0.8.14 Hope it works with the other versions in between too.
 
 ## Features
 
@@ -24,6 +26,7 @@ Current version requires at least Node.js v0.2.3 and it's tested with Node.js v0
  - configurable separator, quote and escape characters (comma, double-quote and double-quote by default)
  - ignores lines starting with configurable comment character (off by default)
  - supports memory-only streaming
+ - iconv encoding conversion for csv files that are not utf8
 
 ## More examples
 
@@ -35,7 +38,9 @@ Echo first column of the `data.csv` file:
         'quote': '"',
         'escape': '"',       
         'comment': '',
+        'encoding': 'ISO-8859-1'  // have to use the names that iconv recognises
     });
+    // once you have the encoding right, the rest is handled transparently
     var writer = new csv.CsvWriter(process.stdout);
     reader.addListener('data', function(data) {
         writer.writeRecord([ data[0] ]);
